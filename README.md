@@ -16,3 +16,6 @@ Login:
 (Optional) The default login can be changed by overwriting the htpasswd file `/auth/.htpasswd`:
 ```htpasswd -Bbn admin [new_password] > /auth/.htpasswd```
 To add another user replace `>` with `>>` and replace `admin` with the new username.
+
+## build
+To build an image with unique or secure specifications, use the Dockerfile provided in this repo. Pull directly from Docker Hub [here](https://hub.docker.com/r/brittanym/registry) for dev environments. The defaults of this project are not secure and should not be deployed in production.
