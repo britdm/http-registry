@@ -2,7 +2,7 @@
 version 2.0
 
 ## quickstart
-Setup local private registry for testing.
+Setup local private Docker registry for testing.
 ```
     docker run -p 5000:5000 --rm --name registry brittanym/registry:2.0
 ```
@@ -15,7 +15,8 @@ Login:
 
 (Optional) The default login can be changed by overwriting the htpasswd file `/auth/.htpasswd`:
 ```htpasswd -Bbn admin [new_password] > /auth/.htpasswd```
-To add another user replace `>` with `>>` and replace `admin` with the new username.
+
+To add another user replace `>` with `>>` and replace `admin` with the new username using the htpasswd command above.
 
 ## build
-To build an image with unique or secure specifications, use the Dockerfile provided in this repo. Pull directly from Docker Hub [here](https://hub.docker.com/r/brittanym/registry) for dev environments. The defaults of this project are not secure and should not be deployed in production.
+To build an image with unique or secure specifications, use the Dockerfile provided in this repo. Pull directly from [Docker Hub](https://hub.docker.com/r/brittanym/registry) for dev environments. The defaults of this project are not secure and should not be deployed directly into a production environment.
