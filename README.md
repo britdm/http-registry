@@ -1,6 +1,6 @@
 # http-registry
 
-version 2.0
+version 2.1
 
 ## quickstart
 
@@ -9,7 +9,7 @@ Setup a local private Docker registry with basic auth for testing.
 Deploy the registry using docker, the `restart` flag will allow the registry to always run when the Docker Engine starts up on port 5000.
 
 ```
-    docker run -p 5000:5000 --restart always --name registry brittanym/registry:2.0
+    docker run -p 5000:5000 --restart always --name registry brittanym/registry:2.1
 ```
 
 When running this registry as is, it is insecure and uses self-signed certs.
