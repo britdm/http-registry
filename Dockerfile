@@ -19,7 +19,8 @@ ENV REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt
 ENV REGISTRY_HTTP_TLS_KEY=/certs/registry.key
 
 RUN apk update \
-    && apk upgrade
+    && apk upgrade \
+    && apk add apache2-utils
 
 COPY . /
 COPY --from=builder /certs/registry.key /certs/registry.key
