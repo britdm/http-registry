@@ -3,13 +3,13 @@ FROM httpd:2.4 as builder
 WORKDIR /
 
 RUN apt-get update \
-    && apt-get upgrade
+    && apt-get upgrade -y
 RUN mkdir certs \
     && openssl req -x509 -sha256 -nodes -days 365 \
      -newkey rsa:4096 -keyout /certs/registry.key -out /certs/registry.crt \
      -subj "/C=US/ST=Texas/L=Austin/O=Company/CN=www.example.com"
 
-FROM registry:2.8.2
+FROM registry:2.8.3
 
 ENV REGISTRY_AUTH=htpasswd
 ENV REGISTRY_AUTH_HTPASSWD_REALM=Registry\ Realm
